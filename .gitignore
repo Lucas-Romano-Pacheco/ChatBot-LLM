@@ -1,0 +1,101 @@
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*$py.class
+
+# =====================
+# Ambientes virtuais
+# =====================
+.env
+.env.*
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+.venv.bak/
+.env.runtime
+
+# =====================
+# Cache / Build
+# =====================
+.cache/
+.cache_db/
+.cache/
+cache/
+*.log
+*.logs
+*.pid
+*.sqlite3
+*.db
+.mypy_cache
+
+# =====================
+# IDEs e sistema
+# =====================
+.vscode/
+*.code-workspace
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# =====================
+# Node (frontend)
+# =====================
+node_modules/
+dist/
+build/
+dist-ssr/
+.vite/
+.bun.lockb
+
+# =====================
+# Docker e dependências pesadas
+# =====================
+*.tgz
+*.tar.gz
+
+# =====================
+# Dados e outputs locais
+# =====================
+data/
+*/data/
+*/*/data/
+uploads_temp/
+*.npz
+*.csv
+*.xls*
+*.parquet
+*.feather
+*.pdf
+
+# =====================
+# ESlint / Prettier
+# =====================
+.eslintcache
+.prettiercache
+
+# =====================
+# Logs específicos
+# =====================
+logs/
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =====================
+# Prettier Config Cache
+# =====================
+.prettiercache
