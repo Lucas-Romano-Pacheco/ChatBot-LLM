@@ -3,34 +3,56 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-00C7B7?style=for-the-badge&logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/React-2023-%2361DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-# DataBot
+# 🤖 DataBot
 
-Um **chatbot híbrido RAG** (Retrieval-Augmented Generation) de alta performance, desenvolvido para entregar respostas precisas e contextualizadas sobre dados públicos de municípios brasileiros.
-O primeiro passo consiste em um **pipeline de scraping e ETL** que coleta automaticamente dados de APIs públicas (IBGE/SIDRA, INEP, QEdu, etc.) e os armazena no PostgreSQL, garantindo uma fonte de verdade atualizada.
+> **Chatbot Híbrido RAG (Retrieval-Augmented Generation) de alta performance, especializado em dados públicos de municípios brasileiros.**
 
-A plataforma integra:
+O **DataBot** entrega respostas precisas e contextualizadas através de um pipeline robusto de **Scraping e ETL**, que coleta dados de APIs públicas (IBGE/SIDRA, INEP, QEdu) e os centraliza em uma fonte de verdade confiável.
 
-- **FastAPI** no backend, para um servidor leve, assíncrono e escalável.
-- **React + Vite + TailwindCSS** no frontend, garantindo uma experiência de usuário fluida e responsiva.
-- **LangChain** e **Groq (Gemma-2-9b-it)** para geração de linguagem natural, estritamente guiada por templates por agente.
-- **HuggingFace Embeddings** + **Pinecone** para indexação semântica e recuperação dinâmica de contexto.
-- **PostgreSQL** como fonte de verdade para dados tabulares (população, PIB, educação, infraestrutura) e **MongoDB** para logging estruturado de cada interação.
+---
 
-Com agentes especializados (População, Economia, Educação Básica, Educação Técnica e Comparativo), o Chatbot:
+## 🛠️ Tech Stack
 
-1. **Interpreta** sua pergunta (detecção de cidade, tema e métrica) por regras heurísticas e keywords, **podendo escalar para a própria LLM interpretar a pergunta**.
-2. **Recupera** dentro do PostgreSQL ou, no caso de múltiplos municípios, faz comparativos diretos.
-3. **Gera** a saída em Markdown enriquecido (análise de dados e conclusão objetiva), apoiada em prompts customizados.
-4. **Registra** cada passo: entrada, agente, fontes, cidades e timestamp em MongoDB, garantindo auditabilidade e métricas de uso.
+A plataforma foi construída integrando tecnologias modernas para garantir escalabilidade e performance:
 
-Este projeto foi concebido para atender às necessidades de:
+| Camada | Tecnologias |
+| :--- | :--- |
+| **Backend** | ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat&logo=fastapi) **FastAPI** (Assíncrono e leve) |
+| **Frontend** | ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white) **Vite + React** |
+| **LLM & AI** | **LangChain** + **Groq (Gemma-2-9b-it)** |
+| **RAG & Busca** | **HuggingFace Embeddings** + **Pinecone** (Indexação Semântica) |
+| **Dados** | ![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white) (Dados Tabulares) + ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white) (Logging) |
 
-- **Consultas inteligentes** (quantas escolas, matrículas, docentes, turmas) por município.
-- **Análises comparativas** entre duas ou mais cidades, com cálculos diretos de diferença e ranking.
-- **Extensibilidade** para novas fontes, métricas e agentes setoriais.
+---
+
+## 🧠 Arquitetura e Agentes
+
+O sistema opera com **Agentes Especializados** que guiam a geração de respostas com base em templates estritos:
+* 👥 **População**
+* 💰 **Economia**
+* 🏫 **Educação Básica**
+* 🎓 **Educação Técnica**
+* ⚖️ **Comparativo**
+
+### 🔄 Como Funciona (O Pipeline)
+
+1.  **Interpretação:** O sistema detecta cidade, tema e métrica via regras heurísticas e keywords (escalável para interpretação via LLM).
+2.  **Recuperação (Retrieval):** Busca dados precisos no **PostgreSQL** ou realiza cruzamento de dados para múltiplos municípios.
+3.  **Geração (Generation):** Criação de resposta em Markdown enriquecido, com análise de dados e conclusões objetivas, via **Groq/Gemma-2**.
+4.  **Auditoria:** Registro completo de cada interação (entrada, agente acionado, fontes e timestamp) no **MongoDB**.
+
+---
+
+## ✨ Principais Funcionalidades
+
+* ✅ **Consultas Inteligentes:** Acesso rápido a métricas complexas (escolas, matrículas, PIB, docentes).
+* ✅ **Análises Comparativas:** Cálculos diretos de diferença, rankings e comparativos entre cidades.
+* ✅ **Fonte de Verdade:** Dados mantidos e atualizados via pipeline de ETL proprietário.
+* ✅ **Extensibilidade:** Arquitetura pronta para plugar novas fontes e métricas.
+
+---
 
 ---
 
@@ -196,10 +218,6 @@ Este projeto foi concebido para atender às necessidades de:
 
 ---
 
-## 💬 Documentos
-
-- Para exemplos de perguntas, veja [Perguntas](docs/Perguntas.md).
-
 ---
 
 ## 🚀 Setup
@@ -283,12 +301,6 @@ Acesse:
 
 ---
 
-## 📄 Licença
-
-Este projeto está licenciado sob os termos da [Licença MIT](./LICENSE).
-
----
-
 ## 📢 NOTICE – Uso de Dados Públicos
 
 Este projeto utiliza dados públicos obtidos de fontes oficiais do governo brasileiro, de acordo com os princípios da Lei de Acesso à Informação (Lei nº 12.527/2011) e demais normas de dados abertos.
@@ -305,12 +317,12 @@ Este projeto utiliza dados públicos obtidos de fontes oficiais do governo brasi
   - Censo Escolar, Microdados e Suplementos Técnicos
   - [https://www.gov.br/inep](https://www.gov.br/inep)
 
-- **FNDE (Fundo Nacional de Desenvolvimento da Educação)** `em breve`
+- **FNDE (Fundo Nacional de Desenvolvimento da Educação)**
 
   - Programas educacionais e orçamentários
   - [https://www.gov.br/fnde](https://www.gov.br/fnde)
 
-- **Portal da Transparência** `em breve`
+- **Portal da Transparência** 
   - Gastos públicos federais, estaduais e municipais
   - [https://www.portaltransparencia.gov.br](https://www.portaltransparencia.gov.br)
 
@@ -318,12 +330,6 @@ Este projeto utiliza dados públicos obtidos de fontes oficiais do governo brasi
 
 As respostas geradas por este sistema são **interpretadas por um modelo de linguagem (LLM)** com base em dados públicos estruturados. Isso significa que podem haver variações na apresentação e análise dos dados. Sempre consulte os dados brutos nas fontes oficiais para tomada de decisão crítica.
 
-## 📅 Última atualização dos dados
-
-- Dados IBGE: Abril de 2025
-- Dados INEP: Censo Escolar 2023
-- Dados FNDE: Orçamento 2024 `em breve`
-- Portal da Transparência: Atualizações em tempo real `em breve`
 
 ---
 
