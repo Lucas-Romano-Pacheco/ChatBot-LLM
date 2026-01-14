@@ -53,20 +53,6 @@ O sistema opera com **Agentes Especializados** que guiam a geração de resposta
 * ✅ **Extensibilidade:** Arquitetura pronta para plugar novas fontes e métricas.
 
 ---
-
----
-
-## 📌 Índice
-
-- [✨ Funcionalidades](#-funcionalidades)
-- [📊 Fontes de Dados](#-fontes-de-dados)
-- [⚙️ Arquitetura](#️-arquitetura)
-- [🧰 Tecnologias](#-tecnologias)
-- [💬 Documentos](#-exemplos-de-perguntas)
-- [🚀 Setup](#-setup)
-- [📄 Licença](#-licença)
-- [📢 Notice](#-notice)
-
 ---
 
 ## ✨ Funcionalidades
