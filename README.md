@@ -333,6 +333,3 @@ As respostas geradas por este sistema são **interpretadas por um modelo de ling
 
 ---
 
-## 📬 Contato
-
-Para dúvidas ou solicitações formais sobre os dados utilizados, me envie um [e-mail](mailto:renanmrbraga@gmail.com) ou acesse meu [LinkedIn](https://www.linkedin.com/in/renanmrbraga).
